@@ -1,6 +1,6 @@
 import { Resolvers } from "../../../__generated__/graphql.js";
 
-const resolvers: Resolvers = {
+export const resolvers: Resolvers = {
   Mutation: {
     makeTodo: async (_, {makeTodoInput}, context, info) => {
       const todoItem = {
@@ -15,5 +15,3 @@ const resolvers: Resolvers = {
     }
   }
 };
-
-export default resolvers;

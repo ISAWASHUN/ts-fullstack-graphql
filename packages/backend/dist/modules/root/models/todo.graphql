@@ -1,10 +1,6 @@
-const typeDefs = `#graphql
-  type Todo {
+type Todo {
     id: String!
     title: String!
     updatedAt: String!
     createdAt: String!
   }
-`
-
-export default typeDefs;

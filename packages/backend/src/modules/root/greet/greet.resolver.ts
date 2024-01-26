@@ -1,11 +1,10 @@
-import { MyContext } from "../../../types/graphql.js";
+import { MyContext } from "../../../../types/graphql.js";
 
-const resolvers = {
+export const resolvers = {
   Query: {
-    health: async (_:any, args:any, context: MyContext, info: any) => {
-      return true;
-    }
-  }
-}
-
-export default resolvers;
+    // eslint-disable-next-line @typescript-eslint/require-await
+    greet: async (_: any, args: any, context: MyContext, info: any) => {
+      return "hello";
+    },
+  },
+};

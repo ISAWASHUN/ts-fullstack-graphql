@@ -1,4 +1,4 @@
-const resolvers = {
+export const resolvers = {
     Mutation: {
         makeTodo: async (_, { makeTodoInput }, context, info) => {
             const todoItem = {
@@ -13,4 +13,3 @@ const resolvers = {
         }
     }
 };
-export default resolvers;

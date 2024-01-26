@@ -1,8 +1,8 @@
-const resolvers = {
+export const resolvers = {
     Query: {
-        health: async (_, args, context, info) => {
-            return true;
-        }
-    }
+        // eslint-disable-next-line @typescript-eslint/require-await
+        greet: async (_, args, context, info) => {
+            return "hello";
+        },
+    },
 };
-export default resolvers;
