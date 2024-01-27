@@ -1,14 +1,18 @@
 export const resolvers = {
     Mutation: {
-        makeTodo: async (_, { makeTodoInput }, context, info) => {
-            const todoItem = {
-                id: crypto.randomUUID(),
-                title: makeTodoInput.title,
-                updatedAt: new Date().toISOString(),
-                createdAt: new Date().toISOString(),
-            };
+        makeTodo: async (_, { makeTodoInput }, { prismaClient }, info) => {
+            const newTodo = await prismaClient.todo.create({
+                data: {
+                    title: makeTodoInput.title,
+                },
+            });
+            newTodo.createdAt;
             return {
-                todo: todoItem
+                todo: {
+                    ...newTodo,
+                    createdAt: newTodo.createdAt.toISOString(),
+                    updatedAt: newTodo.updatedAt.toISOString(),
+                }
             };
         }
     }

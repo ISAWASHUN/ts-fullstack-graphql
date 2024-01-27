@@ -6,10 +6,11 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon dist/index.js",
-    "watch": "tsc --watch",
+    "watch": "npm run cpgql && tsc --watch",
     "build": "tsc",
     "start": "node dist/index.js",
-    "gen": "graphql-codegen --config codegen.yml",
+    "gen:gql": "graphql-codegen --config codegen.yml",
+    "gen:db": "prisma migrate dev --name",
     "cpgql": "copyfiles -u 1 src/**/*.graphql ./dist"
   },
   "keywords": [],
@@ -31,8 +32,10 @@
   },
   "dependencies": {
     "@apollo/server": "4.3.0",
+    "@prisma/client": "5.8.1",
     "express": "4.18.2",
     "glob": "8.0.3",
-    "graphql": "16.6.0"
+    "graphql": "16.6.0",
+    "prisma": "5.8.1"
   }
 }
