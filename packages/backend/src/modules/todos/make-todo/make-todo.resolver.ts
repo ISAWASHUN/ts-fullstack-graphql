@@ -12,8 +12,8 @@ export const resolvers: Resolvers = {
       return {
         todo: {
           ...newTodo,
-          createdAt: newTodo.createdAt.toISOString(),
-          updatedAt: newTodo.updatedAt.toISOString(),
+          updatedAt: newTodo.updatedAt,
+          createdAt: newTodo.createdAt
         }
       }
     }
