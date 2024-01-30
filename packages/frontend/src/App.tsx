@@ -1,14 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { useTodosQuery } from './__generated__/graphql'
 
 function App() {
+  const {data, loading, error} = useTodosQuery()
   return (
     <>
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+      {data?.getTodos?.todos?.map((item) => (
+        <div key={item?.id}>
+          {item?.id}: {item?.title}
+        </div>
+      ))}
     </>
   )
 }
