@@ -33,6 +33,8 @@
   "dependencies": {
     "@apollo/server": "4.3.0",
     "@prisma/client": "5.8.1",
+    "@types/cors": "2.8.17",
+    "cors": "2.8.5",
     "express": "4.18.2",
     "glob": "8.0.3",
     "graphql": "16.6.0",
